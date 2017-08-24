@@ -1,62 +1,42 @@
-'use strict';
-module.exports = exports = {};
-const Bitmap = require('./lib/bitmap');
-
-const fs = require('fs');
+'use-strict';
 
 
-const ColorTransform = module.exports = function () {};
+module.exports.prototype.greyscale = function() {
 
-ColorTransform.prototype.invertColors = function (bitmap) {
-  let colorTable = bitmap.colorTable;
+  for (var i = 0; i < bmp.pixelArray.length; i+=4) {
 
-  return colorTable.map(function (hexColor) {
-    let hexArray = hexColor.match(/.{1,2}/g);
+  [bmp.pixelArray[i], bmp.pixelArray[i+1], bmp.pixelArray[i+2], bmp.pixelArray[i+3]];
+  //create a new buffer off math'ed data;
+  let asdf = greyscalebuffer
+  //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
+  //insert greyscale buffer into all data?
 
-    let r = parseInt(hexArray[0], 16);
-    let g = parseInt(hexArray[1], 16);
-    let b = parseInt(hexArray[2], 16);
-    let invertR = (255 - r).toString(16);
-    let invertG = (255 - g).toString(16);
-    let invertB = (255 - b).toString(16);
-
-    let invertArray = [invertR, invertG, invertB, '00'];
-
-    invertArray.forEach(function (val, i) {
-      if (val.length === 1) {
-        invertArray[i] = '0' + invertArray[i];
-      }
-    });
-    invertArray = invertArray.join('');
-    return invertArray;
-  });
 };
 
-ColorTransform.prototype.blueShift = function (bitmap) {
-  let colorTable = bitmap.colorTable;
-  return colorTable.map(function (hexColor) {
-    let hexArray = hexColor.match(/.{1,2}/g);
 
-    let r = parseInt(hexArray[0], 16);
-    let g = parseInt(hexArray[1], 16);
-    let b = parseInt(hexArray[2], 16);
-    let invertR = (Math.ceil(r * 0.1)).toString(16);
-    let invertG = (Math.ceil(g * 0.1)).toString(16);
-    let invertB = (b).toString(16);
+  module.exports.prototype.invert = function() {
 
-    let colorShiftArray = [invertR, invertG, invertB, '00'];
-    colorShiftArray.forEach(function (val, i) {
-      if (val.length === 1) {
-        colorShiftArray[i] = '0' + colorShiftArray[i];
-      }
-    });
-    colorShiftArray = colorShiftArray.join('');
-    return colorShiftArray;
-  });
-};
+    for (var i = 0; i < bmp.pixelArray.length; i+=4) {
 
-ColorTransform.prototype.rotateImage = function(bitmap) {
-  let pixelTable = bitmap.pixelTable;
+  [bmp.pixelArray[i], bmp.pixelArray[i+1], bmp.pixelArray[i+2], bmp.pixelArray[i+3]];
+  //create a new buffer off math'ed data;
+  let newnambuffer = invertbuffer
+  //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
+  //insert greyscale buffer into all data?
 
-  return pixelTable.reverse();
+
+
+
+  };
+
+  module.exports.prototype.blackOut = function() {
+
+    for (var i = 0; i < bmp.pixelArray.length; i+=4) {
+
+  [bmp.pixelArray[i], bmp.pixelArray[i+1], bmp.pixelArray[i+2], bmp.pixelArray[i+3]];
+  //create a new buffer off math'ed data;
+  let newnambuffer = blackOut
+  //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
+  //insert greyscale buffer into all data?
+
 };
