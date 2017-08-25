@@ -9,8 +9,7 @@ const read = require(`./lib/read-write`);
 module.exports = exports = {};
     // let bitmap = new Bitmap(buffer);
 read.initFile();
-read.writeNew();
-
-transform.invertColors(copied);
-transform.greyscale(copied1);
-transform.blackOut(copied2);
+//
+// transform.invertColors(copied);
+// transform.greyscale(copied1);
+// transform.blackOut(copied2);

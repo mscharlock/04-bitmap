@@ -15,6 +15,8 @@ ColorTransform.prototype.invertColors = function(data) {
     let invertArr = [data.pixelArray[i]*0, data.pixelArray[i + 1]*0, data.pixelArray[i + 2]*0, data.pixelArray[i + 3]];
   };
   console.log(invertArr);
+  readWrite.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, invertArr);
+};
   // invertArr.forEach(ele => {
   //     ele[0]*0;
   //     ele[1]*0;
@@ -23,16 +25,15 @@ ColorTransform.prototype.invertColors = function(data) {
   //   });
 
     //write file with new data
-    readWrite.writeNew(invertArr);
+    // readWrite.writeNew(invertArr);
 
     //create a new buffer off math'ed data;
     // let asdf = greyscalebuffer
     // console.log(invertArr);
     //we have to then write it
     //then we pass it back up to write
-  }
-  index.readWrite.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied, exports.writeNew);
-};
+
+  //, exports.writeNew
 
 
 ColorTransform.prototype.greyScale = function(data) {
