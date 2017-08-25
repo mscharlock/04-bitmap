@@ -1,5 +1,7 @@
 'use-strict';
 const Bitmap = require('./lib/bitmap');
+const index = require('./lib/index');
+const writerReader = require(`./lib/read-write`);
 
 let bmp;
 let bmp2;
@@ -17,6 +19,7 @@ ColorTransform.prototype.invertColors = function(data) {
     //we have to then write it
     //then we pass it back up to write
   }
+  index.writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied, exports.writeNew);
 };
 
 
@@ -28,6 +31,7 @@ ColorTransform.prototype.greyscale = function(data) {
     // let newnambuffer = invertbuffer
     console.log(greyscaleArr);
   }
+  index.writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied1, exports.writeNew);
 };
 
 ColorTransform.prototype.blackOut = function(data) {
@@ -39,4 +43,5 @@ ColorTransform.prototype.blackOut = function(data) {
     // let newnambuffer = blackOut
     console.log(blackOutArr);
   }
+  index.writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied2, exports.writeNew);
 };

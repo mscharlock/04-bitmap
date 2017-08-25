@@ -2,26 +2,20 @@
 
 //need to be adjusted
 const Bitmap = require(`./lib/bitmap`);
-const ColorTransform = require(`./lib/transform`);
-const writerReader = require(`./lib/read-write`);
+const transform = require(`./lib/transform`);
+const fs = require('fs');
 
 module.exports = exports = {};
+    // let bitmap = new Bitmap(buffer);
 
-//we call the invertBitmap method
-exports.invertBitmap = () => {
-  let onRead = (err, data) => { //we read the data
-    if (err) throw err;
+fs.readFile(`${__dirname}/assets/bitmap.bmp`, (err, data) => {
 
-    let bitmap = new Bitmap(data);
-    let transform = new ColorTransform();
-    let copied = new Buffer(data);
-    let copied1 = new Buffer(data);
-    let copied2 = new Buffer(data);
 
-    transform.invertColors(copied);
-    transform.greyscale(copied1);
-    transform.blackOut(copied2);
+  let copied = new Bitmap(data);
+  let copied1 = new Bitmap(data);
+  let copied2 = new Bitmap(data);
 
-    writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied, exports.writeNew);
-    writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied1, exports.writeNew);
-    writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied2, exports.writeNew);
+  transform.invertColors(copied);
+  transform.greyscale(copied1);
+  transform.blackOut(copied2);
+});
