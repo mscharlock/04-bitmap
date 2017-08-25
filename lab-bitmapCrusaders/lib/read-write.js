@@ -1,23 +1,22 @@
 'use-strict';
 const Bitmap = require('./lib/bitmap');
-
+const transform = require ('./lib/transform')
 const fs = require('fs');
 
 module.exports = exports = {};
-let bmp;
 
-fs.readFile(`${__dirname}/assets/palette-bitmap.bmp`, (err, data) => {
-  if(err) console.error(err);
+exports.initFile = (path, callback) => {
+    fs.readFile(`${__dirname}/assets/palette-bitmap.bmp`, (err, data) => {
+      if(err) console.error(err);
 
-  bmp = new Bitmap(data);
-  console.log(bmp);
-
-
-  exports.initFile = (path, callback) => {
-    fs.readFile(path, (err, data) => {
-      if(err) return callback(err);
-      return callback(null, data);
+      let copied = new Bitmap(data);
+      let copied1 = new Bitmap(data);
+      let copied2 = new Bitmap(data);
     });
+
+    ColorTransform.invertColors(err, copied);
+    ColorTransform.greyScale(err, copied1);
+    ColorTransform.blackOut(err, copied2);
   };
 
   exports.writeNew = (path, data) => {
@@ -33,11 +32,6 @@ fs.readFile(`${__dirname}/assets/palette-bitmap.bmp`, (err, data) => {
       return data;
     });
   };
-
-
-  module.exports.prototype.greyscale(err, data);
-  module.exports.prototype.invert(err, data);
-  module.exports.prototype.blackOut(err, data);
 
 
 });
