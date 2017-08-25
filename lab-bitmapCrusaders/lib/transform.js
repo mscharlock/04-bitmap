@@ -1,29 +1,41 @@
 'use-strict';
 const Bitmap = require('./lib/bitmap');
 const index = require('./lib/index');
-const writerReader = require(`./lib/read-write`);
+const readWrite = require(`./lib/read-write`);
 
-let bmp;
-let bmp2;
-let bmp3;
+// let bmp;
+// let bmp2;
+// let bmp3;
 
 const ColorTransform = module.exports = function() {};
 
 ColorTransform.prototype.invertColors = function(data) {
-  bmp = new Bitmap(data);
-  for (var i = 0; i < bmp.pixelArray.length; i += 4) {
-    let invertArr = [bmp.pixelArray[i], bmp.pixelArray[i + 1], bmp.pixelArray[i + 2], bmp.pixelArray[i + 3]];
+  // bmp = new Bitmap(data);
+  for (var i = 0; i < data.pixelArray.length; i += 4) {
+    let invertArr = [data.pixelArray[i]*0, data.pixelArray[i + 1]*0, data.pixelArray[i + 2]*0, data.pixelArray[i + 3]];
+  };
+  console.log(invertArr);
+  // invertArr.forEach(ele => {
+  //     ele[0]*0;
+  //     ele[1]*0;
+  //     ele[2]*0;
+  //     ele[3];
+  //   });
+
+    //write file with new data
+    readWrite.writeNew(invertArr);
+
     //create a new buffer off math'ed data;
     // let asdf = greyscalebuffer
-    console.log(invertArr);
+    // console.log(invertArr);
     //we have to then write it
     //then we pass it back up to write
   }
-  index.writerReader.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied, exports.writeNew);
+  index.readWrite.writeNew(`${__dirname}/assets/palette-invert-bitmap.bmp`, copied, exports.writeNew);
 };
 
 
-ColorTransform.prototype.greyscale = function(data) {
+ColorTransform.prototype.greyScale = function(data) {
   for (var i = 0; i < bmp.pixelArray.length; i += 4) {
     bmp2 = new Bitmap(data);
     let greyscaleArr = [bmp2.pixelArray[i], bmp2.pixelArray[i + 1], bmp2.pixelArray[i + 2], bmp2.pixelArray[i + 3]];
