@@ -13,9 +13,9 @@ ColorTransform.prototype.invertColors = function(data) {
     let invertArr = [bmp.pixelArray[i], bmp.pixelArray[i + 1], bmp.pixelArray[i + 2], bmp.pixelArray[i + 3]];
     //create a new buffer off math'ed data;
     // let asdf = greyscalebuffer
-    //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
-    //insert greyscale buffer into all data?
     console.log(invertArr);
+    //we have to then write it
+    //then we pass it back up to write
   }
 };
 
@@ -26,8 +26,6 @@ ColorTransform.prototype.greyscale = function(data) {
     let greyscaleArr = [bmp2.pixelArray[i], bmp2.pixelArray[i + 1], bmp2.pixelArray[i + 2], bmp2.pixelArray[i + 3]];
     //create a new buffer off math'ed data;
     // let newnambuffer = invertbuffer
-    //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
-    //insert greyscale buffer into all data?
     console.log(greyscaleArr);
   }
 };
@@ -39,8 +37,6 @@ ColorTransform.prototype.blackOut = function(data) {
     let blackOutArr = [bmp3.pixelArray[i], bmp3.pixelArray[i + 1], bmp3.pixelArray[i + 2], bmp3.pixelArray[i + 3]];
     //create a new buffer off math'ed data;
     // let newnambuffer = blackOut
-    //NEED TO INSERT CLIP INTO ORIGINAL BUFFER
-    //insert greyscale buffer into all data?
     console.log(blackOutArr);
   }
 };
