@@ -14,8 +14,8 @@ exports.initFile = () => {
     let copied2 = new Bitmap(data);
     console.log(copied, copied1, copied2);
     ColorTransformer.invertColors(err, copied);
-    ColorTransformer.greyScale(err, copied1);
-    ColorTransformer.blackOut(err, copied2);
+    // ColorTransformer.greyScale(err, copied1);
+    // ColorTransformer.blackOut(err, copied2);
   });
 };
 
