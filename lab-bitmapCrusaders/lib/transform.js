@@ -1,7 +1,7 @@
 'use-strict';
 
 
-const readWrite = require(`./lib/read-write`);
+const readWrite = require(`../lib/read-write`);
 
 // let bmp;
 // let bmp2;
