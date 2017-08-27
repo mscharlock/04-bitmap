@@ -45,4 +45,4 @@ While we would have liked to apply the TDD process on this project, we did not u
 Gavin, Michelle, and Shaun are currently taking Code 401 (Full Stack JavaScript) at Code Fellows in Seattle, WA. They constructed this project in their first week of class. Want to learn more about them? Visit their LinkedIn profiles:
 (icon) (icon) (icon)
 
-The knight in our Bitmap Crusaders logo was designed by: [WiLD11]('http://www.wild11.newgrounds.com')
+The knight in our Bitmap Crusaders logo was designed by: [WiLD11](http://www.wild11.newgrounds.com)
