@@ -4,11 +4,11 @@
 [![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork)]()
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
-[TOC]
+## Table of Contents
 
-# :art: What this program does
-# :art: How we made it
-# :art: Who are the Bitmap Crusaders?
++ :art: What this program does
++ :art: How we made it
++ :art: Who are the Bitmap Crusaders?
 
 
 ## What this program does:
