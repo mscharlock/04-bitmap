@@ -1,18 +1,19 @@
-![Bitmap Transformer]('./assets/BitmapTransformer.png')
+![Bitmap Transformer](./assets/BitmapTransformer.png)
 
 # Bitmap Crusader's Bitmap Transformer Documentation
-[![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork)]()
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-[TOC]
+:art:
 
-# What this program does
-# Installation
-# How we made it
-# Who are the Bitmap Crusaders?
+Using JavaScript, an image you place in the assets file with the name of palette-bitmap.bmp will be converted to greyscale, blackout (all black pixels), and inverted colors when you run the command node index.js in the terminal.
 
+# Table of Contents
++  What this program does
++ Installation
++ How we made it
++ Who are the Bitmap Crusaders?
 
 ## Features:
-Using JavaScript, an image you place in the assets file with the name of palette-bitmap.bmp will be converted to greyscale, blackout (all black pixels), and inverted colors when you run the command node index.js in the terminal.
+Something something
 
 ## Installation
 `npm something or other guys we need to fill this in`
