@@ -1,6 +1,7 @@
 'use-strict';
 
 const fs = require('fs');
+const bitmap = require('../lib/bitmap');
 const readWrite = require(`../lib/read-write`);
 console.log(readWrite);
 
@@ -14,9 +15,9 @@ exports.invertColors = function(err, data) {
   console.log('this is data', data);
   // let invertArr = data;
   let thing = [];
-  for (var i = 0; i < data.pixelArray.length; i += 2) {
-    let invertArr = (255-data.pixelArray[i]);
-    parseInt(invertArr, 2);
+  for (var i = 0; i < data.pixelArray.length; i += 4) {
+    let invertArr = (255-data.pixelArray[i] + 255-data.pixelArray[i+1] + 255-data.pixelArray[i+2] + 255-data.pixelArray[i+3]);
+    // parseInt(invertArr, 4);
     console.log('this is invertarrrrr',invertArr);
     thing.push(invertArr);
   }
@@ -25,7 +26,7 @@ exports.invertColors = function(err, data) {
   let rightingBuffer = Buffer.from(thing);
   // let rightingBuffer = Buffer.alloc(1087, thing);
   console.log('this is the righting buffer', rightingBuffer);
-  fs.writeFile(`./assets/palette-bitmap.bmp`, rightingBuffer);
+  fs.writeFile(`./assets/palette-bitmap.bmp`, bitmap.allData);
 
 };
 // invertArr.forEach(ele => {
