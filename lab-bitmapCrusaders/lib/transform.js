@@ -16,16 +16,17 @@ exports.invertColors = function(err, data) {
   let thing = [];
   for (var i = 0; i < data.pixelArray.length; i += 2) {
     let invertArr = (255-data.pixelArray[i]);
-    parseInt(invertArr, 16);
+    parseInt(invertArr, 2);
     console.log('this is invertarrrrr',invertArr);
     thing.push(invertArr);
   }
   console.log('this is completed thing', thing);
 
   let rightingBuffer = Buffer.from(thing);
-  // let rightingBuffer = Buffer.alloc(100, invertArr);
+  // let rightingBuffer = Buffer.alloc(1087, thing);
   console.log('this is the righting buffer', rightingBuffer);
   fs.writeFile(`./assets/palette-bitmap.bmp`, rightingBuffer);
+
 };
 // invertArr.forEach(ele => {
 //     ele[0]*0;
@@ -33,17 +34,17 @@ exports.invertColors = function(err, data) {
 //     ele[2]*0;
 //     ele[3];
 //   });
-
-//write file with new data
+//
+// write file with new data
 // readWrite.writeNew(invertArr);
 
-//create a new buffer off math'ed data;
+// create a new buffer off math'ed data;
 // let asdf = greyscalebuffer
 // console.log(invertArr);
-//we have to then write it
-//then we pass it back up to write
-
-//, exports.writeNew
+// we have to then write it
+// then we pass it back up to write
+//
+// , exports.writeNew
 
 //
 // ColorTransform.prototype.greyScale = function(data) {
