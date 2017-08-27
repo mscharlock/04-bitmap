@@ -1,10 +1,9 @@
 ![Bitmap Transformer](./assets/BitmapTransformer.png)
 
-# Bitmap Crusader's Bitmap Transformer Documentation
+#Bitmap Transformer Documentation
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-:art:
 
-Using JavaScript, an image you place in the assets file with the name of palette-bitmap.bmp will be converted to greyscale, blackout (all black pixels), and inverted colors when you run the command node index.js in the terminal.
+Using JavaScript and Node.js, this program converts 32-bit bitmap images to greyscale, blackout (all black pixels), and inverted colors. :art: You're also welcome to create your own image conversions by adjusting our transform.js file - you'll never need Instagram for filters again!
 
 # Table of Contents
 +  What this program does
@@ -18,7 +17,12 @@ Something something
 ## Installation
 `npm something or other guys we need to fill this in`
 
-## How we made it:
+## Usage
+To run the program, save a 32-bitmap image to the assets folder, with the name palette-bitmap.bmp.
+Run in terminal:
+`node index.js`
+
+## How we made it
 Some exciting text here about our process
 
 ## Who are the Bitmap Crusaders?
