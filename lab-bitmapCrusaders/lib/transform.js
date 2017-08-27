@@ -9,20 +9,22 @@ console.log(readWrite);
 // let bmp3;
 module.exports = exports = {};
 
-
 exports.invertColors = function(err, data) {
   console.log('this is data', data);
-  let invertArr = data;
+  // let invertArr = data;
   let invertedStuff = [];
-  for (var i = 0; i < data.pixelArray.length; i += 1078) {
+  for (var i = 0; i < data.pixelArray.length; i += 2) {
+
     //returning chunks
     invertedStuff.push(255 - data.pixelArray[i]);
-    console.log('invertedStuff', invertedStuff);
+    console.log('this is invertedStuff', invertedStuff);
+
     invertedStuff.toString(16);
+    console.log('conversion to hex', invertedStuff);
     let invertArr = [data.pixelArray[i]*2, data.pixelArray[i + 1]*2, data.pixelArray[i + 2]*2, data.pixelArray[i + 3]*2];
     console.log('this is invertarrrrr',invertArr);
   }
-  invertedStuff.toString('hex', 0, 11078);
+  // invertedStuff.toString('hex', 0, 11078);
   let rightingBuffer = Buffer.alloc(11078, invertedStuff);
   console.log('rightingbuffer', rightingBuffer);
   fs.writeFile(`./assets/palette-bitmap.bmp`, rightingBuffer);
