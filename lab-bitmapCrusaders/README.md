@@ -23,6 +23,7 @@ Using JavaScript and Node.js, this program converts 32-bit bitmap images to grey
 
 ### Installation
 I literally have no idea how other people use this thing.
+
 `npm something or other? guys we need to fill this in`
 
 ### Usage
@@ -43,3 +44,5 @@ While we would have liked to apply the TDD process on this project, we did not u
 ### About Us
 Gavin, Michelle, and Shaun are currently taking Code 401 (Full Stack JavaScript) at Code Fellows in Seattle, WA. They constructed this project in their first week of class. Want to learn more about them? Visit their LinkedIn profiles:
 (icon) (icon) (icon)
+
+The knight in our Bitmap Crusaders logo was designed by: [WiLD11](www.wild11.newgrounds.com)
