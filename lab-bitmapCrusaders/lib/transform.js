@@ -2,24 +2,30 @@
 
 const fs = require('fs');
 const readWrite = require(`../lib/read-write`);
-console.log(readWrite);
+console.log('readWrite');
 
 // let bmp;
 // let bmp2;
 // let bmp3;
 module.exports = exports = {};
 
+//each entry in the color table occupies 4 bytes, in the order blue, green, red, 0x00 (see below for exceptions).
 
 exports.invertColors = function(err, data) {
   console.log('this is data', data);
   let invertArr = data;
+
+
   for (var i = 0; i < data.pixelArray.length; i += 4) {
     let invertArr = [data.pixelArray[i]*1, data.pixelArray[i + 1]*1, data.pixelArray[i + 2]*1, data.pixelArray[i + 3]*1];
     console.log('this is invertarrrrr',invertArr);
   }
-  let rightingBuffer = Buffer.alloc(4, invertArr);
-  fs.writeFile(`./assets/palette-bitmap.bmp`, rightingBuffer);
+  let invertedBuffer = Buffer.from(invertArr);
+  // let rightingBuffer = Buffer.alloc(4, invertArr);
+  fs.writeFile(`./assets/palette-bitmap.bmp`, invertedBuffer);
 };
+
+console.log(module.invertedBuffer);
 // invertArr.forEach(ele => {
 //     ele[0]*0;
 //     ele[1]*0;
