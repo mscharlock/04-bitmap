@@ -30,10 +30,10 @@ exports.invertColors = function(err, bitmap) {
   }
   // console.log('this is completed thing', thing);
 
-  let rightingBuffer = Buffer.from(thing);
-  // let rightingBuffer = Buffer.alloc(1087, thing);
-  console.log('this is the righting buffer', rightingBuffer);
-  fs.writeFile(`./assets/invert-bitmap.bmp`, bob.allData);
+  // let rightingBuffer = Buffer.from(thing);
+  // // let rightingBuffer = Buffer.alloc(1087, thing);
+  // console.log('this is the righting buffer', rightingBuffer);
+  fs.writeFile(`./assets/invert-bitmap.bmp`, thing.push(bob));
 };
 
 //we have to actually call this function?
