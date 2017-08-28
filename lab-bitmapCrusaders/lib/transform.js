@@ -13,13 +13,13 @@ module.exports = exports = {};
 //Ok I think the issue might be that what we had before, exports.invertColors (err, data), it doesn't know what data is??
 exports.invertColors = function(err, bitmap) {
   // console.log('this is data', data);
-  let bob = bitmap.data;
+  let bob = bitmap.pixelArray;
   let thing = [];
-  for (var i = 0; i < bob.length; i += 4) {
+  for (var i = 0; i < bob; i += 4) {
     //do math
-    bob.pixelArray[i] = 255-bob.pixelArray[i];
-    bob.pixelArray[i+1] =255-bob.pixelArray[i+1];
-    bob.pixelArray[i+2]=255-bob.pixelArray[i+2];
+    bob[i] = 255-bob[i];
+    bob[i+1] = 255-bob[i+1];
+    bob[i+2] = 255-bob[i+2];
     //we don't do things on [i+3] because it's the stupid a value
 
     // parseInt(invertArr, 2);
@@ -33,7 +33,7 @@ exports.invertColors = function(err, bitmap) {
   let rightingBuffer = Buffer.from(thing);
   // let rightingBuffer = Buffer.alloc(1087, thing);
   console.log('this is the righting buffer', rightingBuffer);
-  fs.writeFile(`./assets/invert-bitmap.bmp`, bitmap.allData);
+  fs.writeFile(`./assets/invert-bitmap.bmp`, bob.allData);
 };
 
 //we have to actually call this function?
