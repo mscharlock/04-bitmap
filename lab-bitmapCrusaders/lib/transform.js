@@ -10,10 +10,9 @@ console.log(readWrite);
 // let bmp3;
 module.exports = exports = {};
 
-
-exports.invertColors = function(err, data) {
-  console.log('this is data', data);
-  // let data = bitmap;
+//Ok I think the issue might be that what we had before, exports.invertColors (err, data), it doesn't know what data is??
+exports.invertColors = function(err, bitmap) {
+  // console.log('this is data', data);
   let bob = bitmap.data;
   let thing = [];
   for (var i = 0; i < bob.length; i += 4) {
@@ -35,10 +34,11 @@ exports.invertColors = function(err, data) {
   // let rightingBuffer = Buffer.alloc(1087, thing);
   console.log('this is the righting buffer', rightingBuffer);
   fs.writeFile(`./assets/invert-bitmap.bmp`, bitmap.allData);
-
 };
 
-exports.invertColors();
+//we have to actually call this function?
+
+// exports.invertColors();
 // invertArr.forEach(ele => {
 //     ele[0]*0;
 //     ele[1]*0;
