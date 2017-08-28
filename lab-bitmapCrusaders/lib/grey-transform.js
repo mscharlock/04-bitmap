@@ -6,9 +6,9 @@ const readWrite = require(`../lib/read-write`);
 const Bitmap = require(`../lib/bitmap`);
 console.log(readWrite);
 
-let bmp = [];
-let bmp2 = [];
-// let bmp3;
+// let bmp = [];
+// let bmp2 = [];
+// // let bmp3;
 module.exports = exports = {};
 
 ColorTransform.prototype.greyScale = function(data) {
