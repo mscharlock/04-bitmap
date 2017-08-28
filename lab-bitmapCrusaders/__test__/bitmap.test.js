@@ -4,7 +4,7 @@ const fs = require('fs');
 const handleFile = require(__dirname + '/../lib/read-write');
 const invert = require(__dirname + '/../lib/invert-transform');
 const greyScale = require(__dirname + '/../lib/grey-transform');
-const blueScale = require(__dirname + '/../lib/blue-transform');
+const blackout = require(__dirname + '/../lib/blue-transform');
 
 
 
@@ -60,8 +60,8 @@ describe('transforms', () => {
     expect(testBuffer.readUInt8(2)).toEqual(255 - 150);
   });
 
-  test('should blueScale the colors', () => {
-    blueScale(testBuffer, testHeaders, 0, 3);
+  test('should blackout the colors', () => {
+    blackout(testBuffer, testHeaders, 0, 3);
     expect(testBuffer.readUInt8(0)).toEqual(50);
     expect(testBuffer.readUInt8(1)).toEqual(0);
     expect(testBuffer.readUInt8(2)).toEqual(0);
