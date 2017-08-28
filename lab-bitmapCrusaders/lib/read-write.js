@@ -33,7 +33,7 @@ exports.initFile = () => {
 
 exports.writeNew = (path, data) => {
   data = exports.copied.allData;
-  path = `./assets/${exports.nameKeyThing}.bmp`;
+  path = `./assets/${exports.path}.bmp`;
   fs.writeFile(path, data, (err) => {
     if(err) return err;
     return data;
@@ -42,7 +42,7 @@ exports.writeNew = (path, data) => {
 
 exports.invertColors = () => {
   //This is for dynamic file path, because we are using copied in all funcitons.
-  exports.nameKeyThing = Object.keys(ColorTransformer)[1];
+  exports.path = Object.keys(ColorTransformer)[0];
   //This is calling invertColors in TRANSFORM.JS with copied as its data argument.
   ColorTransformer.invertColors(exports.copied);
   //At this point data was sent to transform, was transformed, and then is being used to write.
@@ -51,13 +51,13 @@ exports.invertColors = () => {
 };
 
 exports.greyScale = () => {
-  exports.nameKeyThing = Object.keys(ColorTransformer)[0];
+  exports.path = Object.keys(ColorTransformer)[1];
   ColorTransformer.greyScale(exports.copied);
   exports.writeNew();
 };
 
 exports.blackOut = () => {
-  exports.nameKeyThing = Object.keys(ColorTransformer)[2];
+  exports.path = Object.keys(ColorTransformer)[2];
   ColorTransformer.blackOut(exports.copied);
   exports.writeNew();
 };
